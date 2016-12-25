@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="/static/css/materialize.min.css" media="screen,projection"/>
+    <title>负载均衡算法演示</title>
+    <style type="text/css">
+        #show-chart {
+            float: right;
+            margin-right: 1.5em;
+        }
+
+        .float-right {
+            float: right;
+        }
+    </style>
+</head>
+<body>
+
+
+<div class="container">
+    <h1>负载均衡算法演示</h1>
+    <div class="row">
+        <form class="col s12">
+            <div class="row">
+                <table id="node-list">
+                    <thead>
+                    <tr>
+                        <th>节点名</th>
+                        <th>权重</th>
+                        <th>操作</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <td>
+                            <div class="input-field inline">
+                                <input type="text" class="validate node-name" value="node1"/>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-field inline">
+                                <input type="text" class="validate node-weight" value="5"/>
+                            </div>
+                        </td>
+                        <td>
+                            <a class="waves-effect waves-teal btn del-node">删除</a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="input-field inline">
+                                <input type="text" class="validate node-name" value="node2"/>
+                            </div>
+                        </td>
+                        <td>
+                            <div class="input-field inline">
+                                <input type="text" class="validate node-weight" value="5"/>
+                            </div>
+                        </td>
+                        <td>
+                            <a class="waves-effect waves-teal btn del-node">删除</a>
+                        </td>
+                    </tr>
+                    <tr class="table-bottom">
+                        <td></td>
+                        <td></td>
+                        <td><a id="add-node" class="waves-effect waves-teal btn">添加</a></td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+        </form>
+    </div>
+
+    <div class="row">
+        <div class="input-field col s6">
+            <select id="algorithm">
+                <option value="1" selected>加权轮询调度</option>
+                <option value="2">Nginx轮询调度</option>
+            </select>
+            <label for="algorithm">Materialize Select</label>
+        </div>
+        <div class="input-field col s6">
+            <input id="num" type="text" class="validate" value="10"/>
+            <label for="num">获取次数</label>
+        </div>
+        <div class="row">
+            <a id="show-chart" class="waves-effect waves-light btn">演示</a>
+        </div>
+    </div>
+
+    <div class="row">
+        <div id="chart" style="min-width: 400px; height: 400px;">hello</div>
+    </div>
+
+</div>
+
+<script type="text/javascript" src="/static/js/jquery-1.11.3.min.js"></script>
+<script type="text/javascript" src="/static/js/materialize.min.js"></script>
+<script type="text/javascript" src="/static/js/highcharts.js"></script>
+<script type="text/javascript" src="/static/js/modules/exporting.js"></script>
+<script type="text/javascript" src="/static/js/themes/grid-light.js"></script>
+<script type="text/javascript" src="/static/js/index.js"></script>
+
+</body>
+</html>
